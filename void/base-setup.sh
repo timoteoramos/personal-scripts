@@ -3,7 +3,7 @@
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
-xbps-install -Su base-devel git zsh curl wget tmux htop vim ranger sysstat
+xbps-install -Su base-devel git zsh curl wget tmux htop vim ranger screen sysstat
 mkdir -p /etc/zsh
 
 cat << EOF > /etc/tmux.conf
