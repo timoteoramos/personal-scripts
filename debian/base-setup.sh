@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
 apt update
 apt install -y build-essential git zsh curl wget tmux htop vim ranger sysstat
 

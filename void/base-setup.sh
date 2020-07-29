@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
 xbps-install -Su base-devel git zsh curl wget tmux htop vim ranger sysstat
 mkdir -p /etc/zsh
 
