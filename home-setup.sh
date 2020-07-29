@@ -51,5 +51,5 @@ zstyle :prompt:pure:path color white
 EOF
 
 cat << EOF > ~/.zlogin
-if [[ -z $TMUX ]]; then tmux new-session -A -s 0; exit; fi
+if [[ -z \$TMUX ]]; then tmux new-session -A -s 0; exit; fi
 EOF
