@@ -35,7 +35,7 @@ cat << EOF > ~/.selected_editor
 SELECTED_EDITOR="/usr/bin/vim.basic"
 EOF
 
-rm -Rf ~/.zshrc ~/.zinit ~/.zcompdump ~/.zprofile
+rm -Rf ~/.zshrc ~/.zinit ~/.zcompdump ~/.zprofile ~/.p10k.zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
 cat << EOF >> ~/.zshrc
@@ -47,12 +47,9 @@ zinit wait lucid atload'_zsh_autosuggest_start' light-mode for zsh-users/zsh-aut
 zinit load zdharma/history-search-multi-word
 zinit light zdharma/fast-syntax-highlighting
 
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
- 
-zstyle :prompt:pure:path color white
+zinit ice depth=1; zinit light romkatv/powerlevel10k
 EOF
 
 cat << EOF > ~/.zlogin
-if [[ -z \$TMUX ]]; then tmux new-session -A -s 0; exit; fi
+if [ -n "\$SSH_TTY" ] && [ -z "\$TMUX" ]; then tmux new-session -A -s 0; exit; fi
 EOF
