@@ -5,7 +5,7 @@ chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 dnf update -y --best --allowerasing
 dnf groupinstall -y "Development Tools"
-dnf install -y git zsh curl wget tmux sysstat
+dnf install -y curl git sysstat tmux wget zsh
 
 cat << EOF > /etc/tmux.conf
 set -g default-command "\${SHELL}"

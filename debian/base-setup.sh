@@ -4,7 +4,7 @@ mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
 apt update
-apt install -y build-essential git zsh curl wget tmux htop vim ranger sysstat
+apt install -y build-essential curl git sysstat tmux wget zsh
 
 cat << EOF > /etc/tmux.conf
 set -g default-command "\${SHELL}"
@@ -31,9 +31,9 @@ then
 	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
 fi
 
-EDITOR=vim.basic
+EDITOR=vim.tiny
 HISTFILE=~/.zsh_history
 HISTSIZE=1024
 SAVEHIST=1024
-VISUAL=vim.basic
+VISUAL=vim.tiny
 EOF

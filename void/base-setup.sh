@@ -3,7 +3,8 @@
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
-xbps-install -Sy base-devel git zsh curl wget tmux htop vim ranger screen sysstat
+xbps-install -Syu
+xbps-install -Sy base-devel curl git sysstat tmux wget zsh
 mkdir -p /etc/zsh
 
 cat << EOF > /etc/tmux.conf
@@ -12,11 +13,11 @@ set -g default-terminal "screen-256color"
 EOF
 
 cat << EOF > /etc/zsh/zshenv
-EDITOR=vim
+EDITOR=vi
 HISTFILE=~/.zsh_history
 HISTSIZE=1024
 SAVEHIST=1024
-VISUAL=vim
+VISUAL=vi
 EOF
 
 cat << EOF > /etc/zsh/zshrc
