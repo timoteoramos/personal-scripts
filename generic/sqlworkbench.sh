@@ -3,7 +3,7 @@
 SETUP_DIR=/opt/sqlworkbench
 TEMP_FILE=/tmp/sqlworkbench.zip
 
-curl -o $TEMP_FILE http://www.sql-workbench.eu/Workbench-Build125-with-optional-libs.zip
+curl -o $TEMP_FILE https://www.sql-workbench.eu/Workbench-Build127-with-optional-libs.zip
 if [ -d "$SETUP_DIR" ]; then rm -Rf $SETUP_DIR; fi
 mkdir -p $SETUP_DIR
 mkdir -p /usr/local/bin
