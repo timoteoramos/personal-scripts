@@ -30,19 +30,20 @@ set -g @themepack 'powerline/double/cyan'
 run -b '~/.tmux/plugins/tpm/tpm'
 EOF
 
-rm -Rf ~/.zshrc ~/.zinit ~/.zcompdump ~/.zprofile ~/.p10k.zsh
+rm -Rf ~/.zshrc ~/.zinit ~/.zcompdump ~/.zprofile
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 
 cat << EOF >> ~/.zshrc
 
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+zstyle :prompt:pure:path color white
+
 zinit ice blockf
 zinit light zsh-users/zsh-completions
-zinit wait lucid atload'_zsh_autosuggest_start' light-mode for zsh-users/zsh-autosuggestions
 
 zinit load zdharma/history-search-multi-word
 zinit light zdharma/fast-syntax-highlighting
-
-zinit ice depth=1; zinit light romkatv/powerlevel10k
 EOF
 
 cat << EOF > ~/.zlogin
