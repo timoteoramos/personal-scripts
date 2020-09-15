@@ -23,9 +23,9 @@ set -g @prefix_highlight_show_copy_mode 'on'
 set -g @prefix_highlight_copy_mode_attr 'fg=colour15,bg=colour04'
 set -g @prefix_highlight_show_sync_mode 'on'
 set -g @prefix_highlight_sync_mode_attr 'fg=colour15,bg=colour05'
-set -g @theme-status-left-prefix '#{prefix_highlight}'
+set -g @theme-status-right-length 80
+set -g @theme-status-left-prefix '#{prefix_highlight} '
 set -g @theme-status-right-prefix '#{cpu_fg_color}#{cpu_icon} CPU: #{cpu_percentage} #{ram_fg_color}#{ram_icon} RAM: #{ram_percentage} '
-set -g @themepack 'powerline/double/cyan'
 
 run -b '~/.tmux/plugins/tpm/tpm'
 EOF
